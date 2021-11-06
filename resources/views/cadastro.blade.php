@@ -85,6 +85,7 @@
           text-decoration:none;
           color:black;
         }
+
         .weak{
             color: grey;
         }
@@ -98,28 +99,29 @@
         
         <div class="row main-row">
             <div class="list">
-              <h3><a href="{{ route('login') }}">Login</a></h3>
-              <h3> <a href="{{ route('cadastro') }}" class="weak">Cadastro</a></h3>
+              <h3><a href="{{ route('login') }}" class="weak">Login</a></h3>
+              <h3><a href="{{ route('cadastro') }}">Cadastro</a></h3>
             </div>
             
-            @if (session('erro'))
-
-            <p class="alert alert-danger" role="alert">
-            {{ session('erro') }}
-            </p>
-
-            @endif
             
             <div class="form">
-                <form action="{{ route('login')}}" method='post'>
+                <form action="{{route('cadastro')}}" method="post">
                     @csrf
                     <div class="control">    
+                        <label for="name">Nome</label>
+                        <input class=" input" type="text" id="name" name="name">
+                    </div>
+                    <div class="control">
                         <label for="email">Email</label>
-                        <input class=" input" type="email" name="email">
+                        <input class=" input" type="email" id="email" name="email">
+                    </div>
+                    <div class="control">
+                        <label for="user">Usuário</label>
+                        <input class=" input" type="text" id="user" name="user">
                     </div>
                     <div class="control">
                         <label for="password">Senha</label>
-                        <input class=" input" type="password" name="password">
+                        <input class=" input" type="password" id="password" name="password">
                     </div>
                     <div class="">
                         <input type="submit" value="Enviar" class="btn btn-dark" >
