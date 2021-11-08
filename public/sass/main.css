@@ -57,4 +57,24 @@ h3 {
 .title {
   height: 60px;
 }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+.footer p {
+  font-size: 12rem;
+  color: rgba(134, 134, 134, 0.897);
+}
 /*# sourceMappingURL=main.css.map */

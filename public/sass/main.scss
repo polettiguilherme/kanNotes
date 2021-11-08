@@ -5,9 +5,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background:$body-bg;
-    //background: rgb(127,146,221);
-    //background: linear-gradient(90deg, rgba(127,146,221,1) 0%, rgba(136,219,220,1) 72%);        
+    background:$body-bg;       
 }
 
 .container{
@@ -42,10 +40,11 @@ h3{
     -webkit-box-shadow: -3px 11px 11px -13px #000000; 
     box-shadow: -3px 11px 11px -13px #000000;
     opacity: 1;
-}
-.quadros:hover{
-    background-color: rgba(255, 255, 255, 0.548);
-    cursor:pointer;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.548);
+        cursor:pointer;
+    }
 }
 .main-row{
     padding: 20px;
@@ -54,4 +53,18 @@ h3{
 
 .title{
     height:60px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    position:fixed;
+    border-top:1px solid rgba(0, 0, 0, 0.267);
+    
+    p{
+        font-size: 12rem;
+        color:rgba(134, 134, 134, 0.897);
+    }
 }

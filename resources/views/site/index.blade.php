@@ -1,5 +1,5 @@
 @extends('templates.template')
-
+@section('title', 'Meus Quadros - KanNotes')
 
    
 
@@ -8,7 +8,7 @@
         <div class="row main-row">
             <div class="column main-column">
                 <div class="seus-quadros">
-                    <h3>Seus quadros</h3>
+                    <h3>Meus quadros</h3>
                     <div class="quadros"></div>
                     <div class="quadros"></div>
                     <div class="quadros"></div>

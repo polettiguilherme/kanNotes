@@ -28,7 +28,7 @@
             background-color: white;
             display: flex;
             float: left;
-            border-right: 1px solid rgba(0, 0, 0, 0.486)
+            border-right: 1px solid rgba(0, 0, 0, 0.3)
         }
         body{
             background: rgb(127,146,221);
@@ -59,13 +59,13 @@
         }
         .btn{
             width:100%;
+            
         }
         .control{
             padding-bottom:20px;
         }
         .title{
             height:60px;
-
         }
 
         .container2{
@@ -88,6 +88,19 @@
         .weak{
             color: grey;
         }
+        .erro{
+          color: #b54c4c;
+        }
+        .carousel{
+          height: 100vh;
+        }
+        .img{
+          height:100vh;
+          object-fit: cover;
+        }
+        .carousel-caption{
+          color: black;
+        }
     </style>
     <title>Login</title>
   </head>
@@ -95,20 +108,19 @@
         
 
     <div class="container ">    
-        
-        <div class="row main-row">
+      <div class="row main-row">
+          <div class="btn disabled title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2" viewBox="0 0 16 16">
+                  <path d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z"/>
+              </svg>
+              <p>KanNotes</p>
+          </div>
             <div class="list">
               <h3><a href="{{ route('login') }}">Login</a></h3>
               <h3> <a href="{{ route('cadastro') }}" class="weak">Cadastro</a></h3>
             </div>
             
-            @if (session('erro'))
-
-            <p class="alert alert-danger" role="alert">
-            {{ session('erro') }}
-            </p>
-
-            @endif
+            
             
             <div class="form">
                 <form action="{{ route('login')}}" method='post'>
@@ -125,20 +137,18 @@
                         <input type="submit" value="Enviar" class="btn btn-dark" >
                     </div>
                 </form>
-
             </div>
+            @if (session('erro'))
+
+            <p class="erro" role="alert">
+            {{ session('erro') }}
+            </p>
+
+            @endif
             
         </div>
     </div>
     <div class="container2">
-        <div class="btn disabled title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2" viewBox="0 0 16 16">
-                <path d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z"/>
-            </svg>
-            <p>KanNotes</p>
-        </div>
-
-
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -147,24 +157,24 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="{{ asset('images/login1.jpg') }}" class="d-block w-100 img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{{ asset('images/login2.jpg') }}" class="d-block w-100 img" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                  <h5></h5>
+                  <p></p>
                 </div>
               </div>
             </div>
