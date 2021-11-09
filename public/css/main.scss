@@ -42,7 +42,7 @@ h3{
     opacity: 1;
 
     &:hover{
-        background-color: rgba(255, 255, 255, 0.548);
+        background-color: rgba(109, 106, 106, 0.205);
         cursor:pointer;
     }
 }
@@ -56,15 +56,50 @@ h3{
 }
 
 .footer{
-    display: flex;
+    display: flex ;
     justify-content: center;
     align-items: center;
     width:100%;
-    position:fixed;
+    height: 50px;
     border-top:1px solid rgba(0, 0, 0, 0.267);
     
     p{
-        font-size: 12rem;
+        font-size: 12pt;
         color:rgba(134, 134, 134, 0.897);
+    }
+}
+
+
+.container-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $red;
+    height:100vh;
+
+    .profile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top:-100px;
+        height:500px;
+        width:50%;
+
+        div{
+            margin:15px;
+        }
+        .picture{
+            height:40%;
+            width:30%;
+        }
+        .name, .user{
+            height:30px;
+            width: 40%;
+        }
+    }
+    div {
+        border: 1px solid $red;
+        height:100px;
     }
 }

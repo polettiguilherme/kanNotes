@@ -45,7 +45,7 @@ h3 {
 }
 
 .quadros:hover {
-  background-color: rgba(255, 255, 255, 0.548);
+  background-color: rgba(109, 106, 106, 0.205);
   cursor: pointer;
 }
 
@@ -69,12 +69,64 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  position: fixed;
+  height: 50px;
   border-top: 1px solid rgba(0, 0, 0, 0.267);
 }
 
 .footer p {
-  font-size: 12rem;
+  font-size: 12pt;
   color: rgba(134, 134, 134, 0.897);
+}
+
+.container-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #e3342f;
+  height: 100vh;
+}
+
+.container-profile .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -100px;
+  height: 500px;
+  width: 50%;
+}
+
+.container-profile .profile div {
+  margin: 15px;
+}
+
+.container-profile .profile .picture {
+  height: 40%;
+  width: 30%;
+}
+
+.container-profile .profile .name, .container-profile .profile .user {
+  height: 30px;
+  width: 40%;
+}
+
+.container-profile div {
+  border: 1px solid #e3342f;
+  height: 100px;
 }
 /*# sourceMappingURL=main.css.map */
