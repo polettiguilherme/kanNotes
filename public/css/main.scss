@@ -74,7 +74,6 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid $red;
     height:100vh;
 
     .profile{
@@ -82,24 +81,47 @@ h3{
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-top:-100px;
-        height:500px;
-        width:50%;
-
+        width:50%;   
+        height:100%;
+        border:1px solid lightgrey;
         div{
             margin:15px;
         }
+
         .picture{
-            height:40%;
-            width:30%;
+            height:230px;
+            width:230px;
+            border-radius: 50%;
+
+            img{
+                height:100%;
+                width:100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
         }
         .name, .user{
-            height:30px;
+            height:50px;
             width: 40%;
+            border-bottom:1px solid grey;
+            background-color: white;
+            padding:5px;
+            font-size:large;
         }
-    }
-    div {
-        border: 1px solid $red;
-        height:100px;
+        .label{
+            margin:0;   
+            font-size:small;
+            color: grey;
+        }
+        .edit{
+            background: lightgrey;
+            border-radius: 4px;
+            
+            :hover{
+                background: rgb(163, 163, 163);
+                transition:0.2s;
+            }
+        }
+        
     }
 }
