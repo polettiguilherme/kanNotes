@@ -171,7 +171,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="{{ asset('images/login3.jpg') }}" class="d-block w-100 img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5></h5>
                   <p></p>

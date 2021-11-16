@@ -9,7 +9,7 @@
             <div class="column main-column">
                 <div class="seus-quadros">
                     <h3>Meus quadros</h3>
-                    <div class="quadros"></div>
+                    <a href="{{ route('site.quadro') }}" src=""><div class="quadros"></div></a>
                     <div class="quadros"></div>
                     <div class="quadros"></div>
                     <div class="quadros criar-quadro"></div>

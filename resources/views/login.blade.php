@@ -170,13 +170,13 @@
                   <p></p>
                 </div>
               </div>
-              {{-- <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+              <div class="carousel-item">
+                <img src="{{ asset('images/login3.jpg') }}" class="d-block w-100 img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5></h5>
                   <p></p>
                 </div>
-              </div> --}}
+              </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
