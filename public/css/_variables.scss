@@ -7,6 +7,11 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
+$nav: #3F3F37;
+$color1:#59C3C3;
+$color2:#E3DFFF;
+
+
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
@@ -18,3 +23,16 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $black: #141414;
+
+
+//mixins 
+
+
+$cartao-largura: 260px;
+@mixin scroll($height) {
+
+    @if $height>540px {
+        $cartao-largura:250px;
+    }
+
+}

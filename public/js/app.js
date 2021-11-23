@@ -28,5 +28,17 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    quadro: '.quadros',
+    data: {
+        counter: 0
+    },
+    methods: {
+        add(){
+            alert('oi');
+        }
+    }
+
 });
+
+
+$('#add').onClick(alert('oi'));

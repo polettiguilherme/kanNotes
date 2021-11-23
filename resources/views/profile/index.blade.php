@@ -17,11 +17,18 @@
                 <p class="label">Usuário</p> 
                 {{ @session('email.user') }}
             </div>
+            <div class="email">
+                <p class="label">Email</p> 
+                {{ @session('email.email') }}
+            </div>
             <div class="edit">
                     <button class="btn "> <i class="bi bi-pencil-fill"></i> Editar Perfil  </button>
             </div>
         </div>
         
     </div>
+    <footer class="footer">
+        <p> &copy; GUILHERME POLETTI | TODOS OS DIREITOS RESERVADOS </p>
+    </footer>
 @endsection  
 
