@@ -21,7 +21,7 @@ h3{
 }
 .nav{
     background-color: $nav;
-    height: 10vh;
+    height: 80px;
     padding-left:10px;
     padding-right:10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.267);
@@ -43,7 +43,7 @@ h3{
     align-items: center;
 }
 .img{
-    height:10vh;
+    height:80px;
     display: flex;
     align-items: center;
     .logo{
@@ -214,7 +214,7 @@ h3{
 }
 
 .q{
-    height:100%;
+    height:91.7vh;
     width:100%;
     background: #C3E9E9;
     display:flex;
@@ -256,7 +256,7 @@ h3{
             color:$nav;
         }
         .dots{
-            padding:3px;
+            padding:5px;
             &:hover{
                 background-color:$color2;
             }
@@ -276,7 +276,7 @@ h3{
         }
         .add{
             height: 25px;
-            width: 250px;
+            width: 260px;
             text-align: center;
             margin:8px;
             font-size: 11pt;
@@ -287,6 +287,40 @@ h3{
                 cursor:pointer;
             }
         }
+        .add-quadro{
+            height: 25px;
+            width: 260px;
+            text-align: center;
+            margin:8px;
+            font-size: 11pt;
+            color:$nav;
+            border-radius: 4px;
+            font-weight: bold;
+            &:hover{
+                background:$color2;
+                cursor:pointer;
+            }
+        }
    }
 }
 
+
+
+//scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.205);
+    border-radius: 2px;
+    margin-top:10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.555); 
+    border-radius: 2px;
+  }
+  
+  

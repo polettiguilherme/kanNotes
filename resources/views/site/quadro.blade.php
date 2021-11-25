@@ -103,7 +103,20 @@
                 <div class="add"><i class="bi bi-plus-lg"> </i>Adicionar cartão</div>
             </div>
         </div>
-        
+        <div class="quadro">
+            <div class="box">
+
+                <div class="cartoes">
+                    
+                </div>
+                <div id="count">
+                    <div class="add-quadro" v-on:click="log()"><i class="bi bi-plus-lg"> </i>Adicionar quadro</div>
+                    @{{counter}} 
+                </div>
+                
+            </div>
+        </div>
+        <template ></template>
     </div>
 
 
