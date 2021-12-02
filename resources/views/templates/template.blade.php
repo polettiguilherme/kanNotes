@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     {{-- vue --}}
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script  href="{{ mix('/js/app.js') }}"></script>
+    
   </head>
   <body>
     
@@ -61,4 +61,5 @@
     
 
 </body>
+<script  href="{{ asset('/js/main.js') }}"></script>
 </html>
