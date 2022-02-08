@@ -19,7 +19,7 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,17 +29,54 @@ window.Vue = require('vue').default;
 
 
 
-var app = new Vue({
-    el: '#count',
+
+ var app = new Vue({
+    el: '#box',
     data: {
-        counter: '100'
+        quadros: 
+        [
+            {   
+                cartoes: [
+                    {
+                        id: 1,
+                        text: 'aaa'
+                    },
+                    {
+                        id: 1,
+                        text: 'aaa'
+                    },
+                    {
+                        id: 1,
+                        text:' aaa'
+                    },
+                    {
+                        id: 1,
+                        text: 'aaa'
+                    }
+
+                ]  
+            }
+               
+            
+        ],
+        
+        novoCartao: 3,
+        
     },
     methods: {
+        add: function(){
 
-        log: function(){
-            console.log('a')
+            this.cartoes.push(
+
+                this.cartoes.lenght+1
+
+
+            )
+            this.novoCartao++
+        },
+
+        addQuadro: function(){
+            this.quadros.push(this.quadros.lenght+1)
         }
-
     }
 });
-

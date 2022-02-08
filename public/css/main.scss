@@ -8,7 +8,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background-color:$color2;       
+    background-color:$color2;  
+    user-select: none;     
 }
 
 .container{
@@ -216,7 +217,7 @@ h3{
 .q{
     height:91.7vh;
     width:100%;
-    background: #C3E9E9;
+    background: $color2;
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
@@ -241,7 +242,6 @@ h3{
         
         .cartoes{
             max-height: 540px;
-            
             overflow-y: auto;
             overflow-x: hidden;
         }
@@ -262,12 +262,12 @@ h3{
             }
         }
         .cartao{
-            height:80px;
+            height:100px;
             width: $cartao-largura;
             margin:8px;
-            border-radius:8px;
+            border-radius:4px;
             background: white;
-            -webkit-box-shadow: 0px 4px 10px -15px #000000; 
+            -webkit-box-shadow: 0px 8px 10px -11px #000000; 
             box-shadow: 0px 4px 10px -15px #000000;
 
             .note{
@@ -282,6 +282,7 @@ h3{
             font-size: 11pt;
             color:$nav;
             border-radius: 4px;
+            border:0px;
             &:hover{
                 background:$color2;
                 cursor:pointer;

@@ -8,17 +8,17 @@
         <div class="row main-row">
             <div class="column main-column">
             <h3>Meus quadros</h3>
-                <div class="seus-quadros">
+                <div class="seus-quadros" id="quadro">
                     
                     <a href="{{ route('site.quadro') }}" src="">
                         <div class="quadros">
                                 <div class="title">
-                                    <div class="nome">Nome do quadro</div>
+                                    <div class="nome" id="nome">Nome do quadro </div>
                                 </div>
                         </div>
                     </a>
-                    
-
+                    <input type="text" v-model='counter'>
+                    @{{ counter }}
                     <div class="add" id="add" v-on:click="add()">
                         <div class="add-quadro"><i class="bi bi-plus-lg plus"></i></div>
                     </div>

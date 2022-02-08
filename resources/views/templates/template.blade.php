@@ -59,7 +59,7 @@
 
 
     
-
+<script  src="{{ asset('js/main.js') }}"></script>
 </body>
-<script  href="{{ asset('/js/main.js') }}"></script>
+
 </html>
