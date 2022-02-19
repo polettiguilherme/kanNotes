@@ -4,6 +4,8 @@ use App\Http\Controllers\BoardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\QuadrosController;
+use App\Http\Controllers\CategoriasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,12 +38,20 @@ Route::post('/cadastro', [UsersController::class, 'insert'])->name('cadastro');
 
 //menu principal
 Route::get('/site', [IndexController::class, 'index'])->name('site.index');
+Route::post('/site', [IndexController::class, 'criar'])->name('site.criar');
 
+// deletar quadro
+Route::get('/site/excluir/{qua}', [QuadrosController::class, 'excluir'])->name('site.excluir');
+Route::delete('/site/excluir/{qua}', [QuadrosController::class, 'deletar'])->name('site.deletar');
 
 //edição de perfil
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
 
 //quadro 
-Route::get('/site/quadro', [BoardController::class, 'index'])->name('site.quadro');
+Route::get('/site/{qua}', [CategoriasController::class, 'show'])->name('site.quadro');
+
+Route::post('/site/{qua}', [CategoriasController::class, 'add'])->name('site.add');
+
+
 

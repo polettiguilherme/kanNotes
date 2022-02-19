@@ -49784,6 +49784,9 @@ var __webpack_exports__ = {};
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
+    data = _require.data;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
@@ -49807,30 +49810,83 @@ Vue.component('example-component', (__webpack_require__(/*! ./components/Example
 var app = new Vue({
   el: '#box',
   data: {
-    quadros: [{
-      cartoes: [{
-        id: 1,
-        text: 'aaa'
-      }, {
-        id: 1,
-        text: 'aaa'
-      }, {
-        id: 1,
-        text: ' aaa'
-      }, {
-        id: 1,
-        text: 'aaa'
-      }]
-    }],
-    novoCartao: 3
+    categoria: [],
+    categorias: [],
+    cards: [],
+    new_card: '',
+    request: [],
+    id: ''
   },
   methods: {
-    add: function add() {
-      this.cartoes.push(this.cartoes.lenght + 1);
-      this.novoCartao++;
+    addCategoria: function addCategoria() {
+      this.categoria.id_quadro = $('#id_quadro').val();
+      this.request = this.categoria; //console.log(this.request);
+
+      $.ajax({
+        url: '{{ route(site.add) }}',
+        type: 'post',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+        },
+        data: {
+          id_quadro: this.request.id_quadro,
+          nome_cat: this.request.nome_cat,
+          "function": 'adicionar'
+        },
+        dataType: 'json',
+        success: function success(j) {
+          console.log(j);
+          window.location.reload();
+        }
+      });
     },
-    addQuadro: function addQuadro() {
-      this.quadros.push(this.quadros.lenght + 1);
+    addCard: function addCard(board) {
+      this.new_card = $('#card').val();
+      console.log(this.new_card);
+      axios.post('{{ route(site.add) }}', {
+        id: board,
+        novo: this.new_card,
+        "function": 'novo_card'
+      }).then(function (response) {
+        console.log(response);
+        window.location.reload();
+      });
+    },
+    remover: function remover(id) {
+      $.ajax({
+        url: '{{ route(site.add) }}',
+        type: 'post',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+        },
+        data: {
+          id_board: id,
+          "function": 'remover'
+        },
+        dataType: 'json',
+        success: function success(j) {
+          console.log(j);
+          window.location.reload();
+        }
+      });
+    },
+    removerCard: function removerCard(id) {
+      $.ajax({
+        url: '{{ route(site.add) }}',
+        type: 'post',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+        },
+        data: {
+          id_card: id,
+          "function": 'removerCard'
+        },
+        dataType: 'json',
+        success: function success(j) {
+          console.log(j);
+          window.location.reload();
+        }
+      });
     }
   }
 });

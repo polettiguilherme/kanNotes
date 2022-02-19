@@ -5,6 +5,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.a {
+  text-decoration: none;
+  color:black;  
+}
+
 body {
   background-color: #ffffff;
   -webkit-user-select: none;
@@ -116,6 +121,7 @@ h3 {
   max-width: 250px;
   min-height: 150px;
   display: inline-block;
+  margin:10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -139,6 +145,7 @@ h3 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+          justify-content: space-between;
   height: 100%;
 }
 
@@ -147,29 +154,31 @@ h3 {
   font-size: large;
 }
 
+.quadros .remover {
+  padding: 10px;
+  font-size: large;
+  font-weight: 900;
+}
+.remover:hover {
+  background-color: #bd0000;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .add .add-quadro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 50px;
-  height: 50px;
   background-color: #d9e0e6;
-  -webkit-box-shadow: -3px 11px 11px -13px #000000;
-  box-shadow: -3px 11px 11px -13px #000000;
   opacity: 1;
-  border-radius: 50%;
-  margin-left: 110px;
+  margin-left: 10px;
+  border: none;
 }
 
 .add .add-quadro:hover {
   background-color: #ffffff;
-  cursor: pointer;
+  
 }
 
 .main-row {
@@ -341,10 +350,17 @@ h3 {
   background-color: #ffffff;
 }
 
+.ar {
+  
+  float: right;
+
+}
+
 .quadro .box .cartao {
-  height: 100px;
+  height: 30px;
   width: 260px;
   margin: 8px;
+  padding:5px;
   border-radius: 4px;
   background: white;
   -webkit-box-shadow: 0px 8px 10px -11px #000000;
@@ -402,5 +418,9 @@ h3 {
 ::-webkit-scrollbar-thumb {
   background: rgba(128, 128, 128, 0.555);
   border-radius: 2px;
+}
+
+.hide{
+  display:none;
 }
 /*# sourceMappingURL=main.css.map */

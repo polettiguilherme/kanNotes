@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { data } = require('jquery');
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -28,55 +30,105 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 
-
-
  var app = new Vue({
     el: '#box',
     data: {
-        quadros: 
-        [
-            {   
-                cartoes: [
-                    {
-                        id: 1,
-                        text: 'aaa'
-                    },
-                    {
-                        id: 1,
-                        text: 'aaa'
-                    },
-                    {
-                        id: 1,
-                        text:' aaa'
-                    },
-                    {
-                        id: 1,
-                        text: 'aaa'
-                    }
-
-                ]  
-            }
-               
-            
-        ],
-        
-        novoCartao: 3,
-        
+        categoria: [],
+        categorias:[],
+        cards:[],
+        new_card: '',
+        request: [],
+        id: '',
     },
     methods: {
-        add: function(){
+        addCategoria: function(){
 
-            this.cartoes.push(
+            this.categoria.id_quadro = $('#id_quadro').val();
 
-                this.cartoes.lenght+1
+            this.request = this.categoria;
+
+            //console.log(this.request);
+
+            $.ajax({
+                url: '{{ route(site.add) }}',
+                type: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
+                data: {
+                    id_quadro: this.request.id_quadro,
+                    nome_cat: this.request.nome_cat,
+                    function: 'adicionar'
+                },
+                dataType: 'json',
+                success: function(j){
+                    console.log(j);
+                    window.location.reload();
+                }
+            })
+            
+
+        },
+        
+        addCard: function(board){
 
 
-            )
-            this.novoCartao++
+            
+
+            this.new_card = $('#card').val();
+
+            console.log(this.new_card)
+
+            axios.post('{{ route(site.add) }}', {
+                id: board,
+                novo: this.new_card,
+                function: 'novo_card'
+            }).then(response =>{
+    
+                console.log(response);
+                window.location.reload();
+    
+            });
+
+        },
+        
+        remover: function(id){
+            
+            $.ajax({
+                url: '{{ route(site.add) }}',
+                type: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
+                data: {
+                    id_board: id,
+                    function: 'remover'
+                },
+                dataType: 'json',
+                success: function(j){
+
+                    console.log(j)
+                    window.location.reload();
+
+                }
+            })
         },
 
-        addQuadro: function(){
-            this.quadros.push(this.quadros.lenght+1)
-        }
+        removerCard: function(id){
+            
+            $.ajax({
+                url: '{{ route(site.add) }}',
+                type: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
+                data: {
+                    id_card: id,
+                    function: 'removerCard'
+                },
+                dataType: 'json',
+                success: function(j){
+
+                    console.log(j)
+                    window.location.reload();
+
+                }
+            })
+        },
+        
     }
 });
